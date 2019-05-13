@@ -1,6 +1,9 @@
 # Testing Javascript with Jest
 Course of testing javascript with Jest taken at Platzi
-> Test recommended after install: **npm run test -- gastos**
+> After I finished the course I made a test for a function that converts a common int or float to a number with venezuelan format (useful for prices). You can run this specific test with the following command after install the project: 
+```bash
+$ npm run test -- amount
+```
 ## Install
 ```bash
 $ npm install
