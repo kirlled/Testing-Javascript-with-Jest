@@ -1,6 +1,6 @@
-import { venezuelanFormat } from '../gastos'
+import { venezuelanFormat } from '../amount'
 
-describe('Venezuelan Format for amount of money', () => {
+describe('Venezuelan Format for an amount of money', () => {
   test('Number converted to a String', () => {
     expect(venezuelanFormat(123)).toEqual("123");
   });
