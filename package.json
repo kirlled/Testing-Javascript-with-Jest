@@ -1,7 +1,7 @@
 {
-  "name": "curso",
+  "name": "testing",
   "version": "1.0.0",
-  "description": "Unit Test with Jest",
+  "description": "Course of Testing Javascript with Jest",
   "main": "index.js",
   "scripts": {
     "test": "jest",
