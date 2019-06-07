@@ -10,7 +10,14 @@ export const venezuelanFormat = (amount,
                                  intSeparator = '.', 
                                  decSeparator = ',') => {
   const SEPARATE = 3;
-  let strAmount = amount.toString();
+  let strAmount  = amount.toString();
+  let isNegative = false;
+
+  if (strAmount[0] === '-') {
+    strAmount  = strAmount.slice(1);
+    isNegative = true;
+  }
+
   const arrAmount = strAmount.split('.');
   let intPart = arrAmount[0];
   const intPartLength = intPart.length;
@@ -18,6 +25,10 @@ export const venezuelanFormat = (amount,
   if (intPartLength <= SEPARATE) {
     if (arrAmount[1])
       intPart += decSeparator + arrAmount[1];
+
+    if (isNegative)
+      intPart = `-${intPart}`;
+
     return intPart;
   }
     
@@ -39,6 +50,9 @@ export const venezuelanFormat = (amount,
 
   if (arrAmount[1])
     amountFormatted += decSeparator + arrAmount[1];
+
+  if (isNegative)
+    amountFormatted = `-${amountFormatted}`;
 
   return amountFormatted;
 };

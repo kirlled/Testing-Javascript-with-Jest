@@ -31,4 +31,22 @@ describe('Venezuelan Format for an amount of money', () => {
   test('Float converted to a String 5-digit', () => {
     expect(venezuelanFormat(12345.57)).toEqual("12.345,57");
   });
+  test('3-digit negative number', () => {
+    expect(venezuelanFormat(-517)).toEqual("-517");
+  });
+  test('4-digit negative number', () => {
+    expect(venezuelanFormat(-5179)).toEqual("-5.179");
+  });
+  test('5-digit negative number', () => {
+    expect(venezuelanFormat(-51796)).toEqual("-51.796");
+  });
+  test('6-digit negative number', () => {
+    expect(venezuelanFormat(-517968)).toEqual("-517.968");
+  });
+  test('7-digit negative number', () => {
+    expect(venezuelanFormat(-5179687)).toEqual("-5.179.687");
+  });
+  test('7-digit negative number with decimal', () => {
+    expect(venezuelanFormat(-5179687.54)).toEqual("-5.179.687,54");
+  });
 });
